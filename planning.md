@@ -101,6 +101,36 @@ The discourse is varied enough to be interesting for three reasons. First, the N
 
 **Resolution rule:** Label the primary mode. If the dominant register is emoting or dismissing in response to an event, it is **reaction**. If the dominant register is asserting a claim — even an event-triggered one — it is **hot_take**. A passing analogy or reflex comparison does not make a reaction a hot_take.
 
+---
+
+### Edge Case 4: analysis ↔ hot_take (discovered during annotation)
+
+**The pattern:** A post cites a single verifiable statistic and then draws a sweeping editorial conclusion from it. The stat is real but the conclusion far exceeds what it proves.
+
+**Annotation example:** "Giannis shooting 17-19 from the FT line in a close out game 6 after being a historically bad shooter is one of the most ridiculous things to happen in finals history. Fucking poetic." The pre-labeler flagged the 17-19 stat as evidence of analysis. But stripping it out, "one of the most ridiculous things to happen in finals history" is a pure assertion that no single statistic can support. The stat gives context but the conclusion stands alone without it.
+
+**Resolution:** Applied the strip-evidence test from Edge Case 1. Labeled **hot_take**. One verifiable data point does not make a post analysis if the conclusion drawn from it is disproportionate.
+
+---
+
+### Edge Case 5: analysis ↔ reaction (fact-citing reaction)
+
+**The pattern:** A brief post states a verifiable historical fact immediately followed by an exclamation of surprise or emotion. The fact is real but the post's purpose is to express a feeling, not to argue anything.
+
+**Annotation example:** "Denver is the first team in NBA history to come back from multiple 3-1 deficits in a single postseason... WOW" The pre-labeler saw the historical fact and labeled it analysis. But the post makes no argument — it states the fact and reacts to it. There is no conclusion, no evidence chain, no structured claim.
+
+**Resolution:** Labeled **reaction**. Citing a fact is not the same as analyzing it. A post that exists to express surprise at a fact is a reaction to that fact, not an analysis of it.
+
+---
+
+### Edge Case 6: news ↔ analysis (editorial content with journalist attribution)
+
+**The pattern:** A post uses journalist attribution in brackets — a strong news signal — but the content is a subjective ranked list or editorial piece, not a factual report.
+
+**Annotation example:** "[Bleacher Report] The 50 Worst NBA Trades of All Time, Ranked" The bracket pattern triggered the news classifier. But the content is a ranked editorial (subjective, judgment-based), not a factual transaction report.
+
+**Resolution:** Labeled **analysis**. Attribution in brackets identifies the source, not the genre of the content. An editorial ranking is analysis. This refined the news boundary rule: bracket attribution is a necessary but not sufficient condition for the news label — the content itself must be a factual report.
+
 ## 4. Data Collection Plan
 
 ### Source
